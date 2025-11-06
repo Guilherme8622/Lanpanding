@@ -4,58 +4,78 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ruan Tips</title>
-<link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="logo-section">
-    <img src="assets/logo.png" alt="Logo Ortega Tips" />
-    <h1>Ruan Tips</h1>
-    <p>Análises diárias no Telegram e YouTube</p>
-    <nav>
-            <ul>
-                <li><a href="http://127.0.0.1:5500/#" target="_blank">Home</a></li>
-                <li><a href="https://g1.globo.com/" target="_blank">Notícias</a></li>
-                <li><a href="https://www.youtube.com/" target="_blank">Youtube</a></li>
-                <li><a href="Por o link aqui" target="_blank">Grupos</a></li>
-                <li><a href="Por o link aqui" target="_blank">Sobre</a></li>
-            </ul>
-        </nav>
+    <div class="perfil-container">
+      <img src="assets/img/perfil_ruan_foto.jpg" alt="Foto Ruan Tips" class="foto-perfil">
+    </div>
+
+    <div class="banner-container">
+      <div class="logo-banner"></div>
+    </div>
+    
   </header>
 
   <main>
+    <!-- Botão VIP -->
     <section class="vip-section">
-      <a href="#" class="teste">
-        <a href="#" class="btn vip-btn">Entrar no VIP</a>
+      <a href="https://wa.me/5547991404814?text=Quero%20participar%20do%20VIP%20" target="_blank" class="btn vip-btn">
+        <img src="assets/img/vip_desktop.png" alt="Dono do grupo" class="foto-dono">
+        <span></span>
       </a>
-      
     </section>
-    
 
+    <!-- Botão FREE -->
     <section class="free-section">
-      <h2>Faça parte do grupo FREE</h2>
-      <p>Análises de jogos no YouTube todos os dias</p>
-      <a href="#" class="btn free-btn">Entrar no FREE</a>
+      <a href="https://t.me/+JGP-ycMjg3c2OTAx" target="_blank" class="btn free-btn">
+        <img src="assets/img/free_desktop.png" alt="Dono do grupo" class="foto-dono">
+      </a>
     </section>
 
+    <!-- Botão YouTube -->
     <section class="youtube-section">
-      <h2>YouTube</h2>
-      <p>Análises de jogos no YouTube todos os dias</p>
-      <a href="#" class="btn youtube-btn">Acompanhe no YouTube</a>
+      <a href="https://www.youtube.com/@viverdebet" target="_blank" class="btn youtube-btn">
+        <img src="assets/img/youtube_desktop.jpg" alt="YouTube" class="foto-dono">
+      </a>
     </section>
 
+    <!-- Botão Instagram -->
     <section class="instagram-section">
-      <h2>Instagram</h2>
-      <p>Acompanhe nas redes sociais</p>
-      <a href="#" class="btn instagram-btn">Veja o Instagram</a>
+      <a href="https://www.instagram.com/ruantipster/" target="_blank" class="btn instagram-btn">
+        <img src="assets/img/insta_desktop.jfif" alt="Instagram" class="foto-dono">
+      </a>
+    </section>
+
+    <!-- Botão Casas de Apostas -->
+    <section class="casas-section">
+      <div class="button-container casas">
+        <a href="https://www.estrelabet.bet.br/cadastro?affid=353409&cxd=adjbqudoeoyhsvhetonlfledc&utm_source=eb_partner&utm_medium=cpa&utm_campaign=eb_353409&utm_campaign=viver_de_bet_youtube"
+           target="_blank" class="button-content casas-banner-link">
+          <img src="assets/img/casa_de_aposta_que_trabalho_4.png" alt="Casas de apostas que recomendo" class="casas-banner">
+        </a>
+      </div>
     </section>
   </main>
 
+  <!-- Rodapé fixo fora do <main> -->
   <footer>
     <p>Siga-nos nas redes</p>
     <div class="social-icons">
-      <img src="assets/youtube-icon.png" alt="YouTube" />
-      <img src="assets/telegram-icon.png" alt="Telegram" />
+      <a href="https://www.youtube.com/@viverdebet" target="_blank">
+        <img src="assets/img/youtube_icon.svg" alt="YouTube" />
+      </a>
+      <a href="https://t.me/seutelegram" target="_blank">
+        <img src="assets/img/telegram_logo_icon.svg" alt="Telegram" />
+      </a>
+      <a href="https://www.instagram.com/ruantipster/" target="_blank">
+        <img src="assets/img/instagram_media_social_icon.svg" alt="Instagram" />
+      </a>
     </div>
+
+    <!-- Foto posicionada no canto inferior direito -->
+    <img src="assets/img/LOGO_VIVERDEBET_PEQ.jfif" alt="Ruan" class="foto-rodape" />
   </footer>
 </body>
 </html>

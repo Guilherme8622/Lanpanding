@@ -1,369 +1,495 @@
-/* Importando fonte externa */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
+/* ===== VARIÁVEIS E FONTES ===== */
+:root{
+  --gold: #FFCC00;
+  --gold-dark: #E6B800;
+  --bg-dark: #050505;
+  --accent: #00CFFF;
+  --container: 1200px;
+  --radius: 12px;
+  --gap-xs: 8px;
+  --gap-sm: 16px;
+  --gap-md: 24px;
+  --gap-lg: 40px;
+  --shadow-soft: 0 10px 30px rgba(0,0,0,0.35);
+  --text-strong: rgba(255,255,255,0.95);
+  --text-soft: rgba(255,255,255,0.85);
+}
 
-/* Reset básico */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
+
+/* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Estilo base */
-body {
-  font-family: 'Montserrat', sans-serif;
-  background-color: #050505;
-  color: #ffffff;
-  margin: 0;
-}
-
-/* Container central */
+/* ===== CONTAINER CENTRAL ===== */
 .container {
-  max-width: 900px;
+  max-width: var(--container);
+  width: 100%;
   margin: 0 auto;
-  padding: 20px;
+  padding: 48px 24px;
 }
 
-/* Cabeçalho */
-header {
-  text-align: relati;
-  padding: 40px 20px;
-  background: linear-gradient(135deg, #080c0a, #007f39);
-  border-radius: 8px;
-}
-
-
-header img {
-  width: 120px;
-  position: relative;
-  left: -700px;
-  top: 30px;
-}
-
-/* Título principal */
-.logo-section h1 {
-  font-size: clamp(32px, 8vw, 80px);
-  font-weight: 900;
-  padding-left: 5vw;
-  text-transform: uppercase;
-  color: #00FF4E;
-  margin: 40px 0;
-  letter-spacing: 4px;
-  background: linear-gradient(90deg, #00FF4E, #00C973);
-  -webkit-text-fill-color: transparent;
-  text-shadow:
-    0 0 10px #0e1410,
-    0 0 20px #0b0f0c,
-    0 0 40px #080e09,
-    0 0 60px #080f0a;
-  animation: pulseGlow 1.5s ease-in-out infinite;
-  
-}
-
-/* Animação de pulsação */
-@keyframes pulse {
-  0% {
-    text-shadow: 0 0 10px #00FF4E, 0 0 20px #00FF4E;
-  }
-  50% {
-    text-shadow: 0 0 30px #00FF4E, 0 0 60px #00FF4E;
-  }
-  100% {
-    text-shadow: 0 0 10px #00FF4E, 0 0 20px #00FF4E;
-  }
-}
-
-@keyframes pulseGlow {
-  0% {
-    transform: scale(1);
-    text-shadow: 0 0 20px #00FF4E, 0 0 40px #00FF4E;
-  }
-  50% {
-    transform: scale(1.05);
-    text-shadow: 0 0 50px #00FF4E, 0 0 80px #00FF4E;
-  }
-  100% {
-    transform: scale(1);
-    text-shadow: 0 0 20px #00FF4E, 0 0 40px #00FF4E;
-  }
-}
-
-
-header p {
-font-size: clamp(32px, 8vw, 80px);
-  text-align: center;
-  margin: 0 auto;
-  padding: 0 10px;
-
-}
-/* Navegação */
-nav ul {
+/* ===== FUNDO ===== */
+body {
   display: flex;
-  list-style: none;
-  line-height: normal;
-  gap: 4rem;
-  justify-content: center;
-  position: relative;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background: url(assets/img/fundo_ruan2.jfif) no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--text-strong);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-nav ul li a {
-    text-decoration: none;
-    font-weight: bold;
-    color: rgb(255, 254, 254);
-    font-size: 28px;
-    transition: color 0.3s;
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: -1;
 }
 
-nav ul li a:hover {
-    color: #fff;
+/* ===== TIPOGRAFIA GLOBAL ===== */
+h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(28px, 4.2vw, 48px);
+  line-height: 1.05;
+  color: var(--text-strong);
+  letter-spacing: -0.5px;
+  margin-bottom: var(--gap-sm);
 }
-
-/* Seções principais */
-section {
-  text-align: center;
-  padding: 60px 20px;
-  background-color: 0;
-  margin: 30px 0;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(20px, 3.2vw, 32px);
+  color: var(--gold);
+  margin-bottom: var(--gap-sm);
 }
-
-section h2 {
-  margin-bottom: 15px;
-  font-size: 24px;
-}
-
-section p {
-  margin-bottom: 20px;
+p, li {
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-soft);
 }
 
-/* Botões */
+/* ===== CABEÇALHO / TÍTULO ===== */
+.logo-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-md);
+  padding-top: 20px;
+}
+
+.banner-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  transform: translateY(-10px);
+}
+
+.logo-banner {
+  width: 100%;
+  max-width: 100%;
+  height: 100px; /* ou 200px/260px em media queries */
+  background-image: url('assets/img/VIVER_BANNER.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 0;
+  position: relative;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  opacity: 0.85;
+  mix-blend-mode: lighten;
+  filter: blur(1px) brightness(1.1);
+  transform: translateZ(0);
+}
+
+
+.logo-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(0,0,0,0.06), rgba(0,0,0,0.18));
+  border-radius: inherit;
+}
+
+/* ===== MAIN / SEÇÕES ===== */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+  flex-grow: 1;
+  margin-top: 20px;
+  margin-bottom: 100px;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 10px 20px;
+}
+
+/* ===== FOTO DE PERFIL ===== */
+.foto-perfil {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 3px solid var(--gold);
+  object-fit: cover;
+  position: relative;
+  display: block;
+  margin: 30px auto 10px auto;
+  box-shadow: 0 0 25px rgba(255, 204, 0, 0.7);
+  z-index: 10;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.foto-perfil:hover {
+  transform: scale(1.06);
+  box-shadow: 0 0 35px rgba(255, 204, 0, 1);
+}
+
+/* ===== BOTÕES / CTAs ===== */
 .btn {
-  display: inline-block;
-  padding: 18px 40px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 80%;
+  max-width: 480px;
+  height: 200px;
+  padding: 18px 20px;
   font-size: 20px;
-  font-weight: bold;
+  font-weight: 700;
   color: #000;
   text-decoration: none;
-  border-radius: 10px;
+  border-radius: var(--radius);
   margin-top: 20px;
   text-transform: uppercase;
-  box-shadow: 0 0 12px rgba(0, 255, 153, 0.6);
-  transition: all 0.3s ease;
-  font-family: 'Montserrat', sans-serif;
   letter-spacing: 1px;
   cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  font-family: 'Montserrat', sans-serif;
+  backface-visibility: hidden;
 }
 
-/* Botão VIP com verde neon */
+.btn:focus {
+  outline: 3px solid rgba(255,204,0,0.18);
+  outline-offset: 4px;
+}
+
+.btn .foto-dono {
+  position: absolute;
+  top: 0.5%;
+  left: 0.5%;
+  width: 99%;
+  height: 99%;
+  object-fit: cover;
+  border-radius: inherit;
+  z-index: 1;
+  opacity: 0.99;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  z-index: 2;
+  transition: 0.3s ease;
+  background: linear-gradient(180deg, rgba(0,0,0,0.06), rgba(0,0,0,0.18));
+}
+
+.btn span {
+  position: relative;
+  z-index: 3;
+  color: #000;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+/* ===== VARIANTES DE BOTÃO ===== */
 .vip-btn {
-  background-color: #00ff99;
-  box-shadow: 0 0 15px #00ff99;
+  background-color: #FFD24D;
+  color: #111;
+  box-shadow: 0 8px 30px rgba(255, 204, 0, 0.12);
 }
-
 .vip-btn:hover {
-  background-color: #00cc88;
-  box-shadow: 0 0 25px #00ff99;
-  transform: scale(1.05);
+  background-color: #FFCC00;
+  color: #050505;
+  box-shadow: 0 18px 40px rgba(255, 204, 0, 0.20);
+  transform: translateY(-6px);
 }
 
-/* Botão FREE com azul neon */
 .free-btn {
-  background-color: #00cfff;
-  box-shadow: 0 0 15px #00cfff;
+  background-color: rgb(0, 186, 255); /* azul-ciano vibrante */
+  color: #ffffff;
+  box-shadow: 0 8px 30px rgba(0, 186, 255, 0.25);
+  border: 1px solid rgba(0, 186, 255, 0.4);
+  transition: all 0.3s ease;
 }
 
 .free-btn:hover {
-  background-color: #00aacc;
-  box-shadow: 0 0 25px #00cfff;
-  transform: scale(1.05);
+  background-color: rgb(0, 140, 255); /* azul mais intenso no hover */
+  color: #ffffff;
+  box-shadow: 0 18px 40px rgba(0, 140, 255, 0.35);
+  transform: translateY(-6px);
 }
 
-/* Botão YouTube com vermelho neon */
 .youtube-btn {
   background-color: #ff0040;
-  box-shadow: 0 0 15px #ff0040;
+  color: #111;
+  box-shadow: 0 8px 30px rgba(255, 0, 64, 0.12);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
 }
-
 .youtube-btn:hover {
   background-color: #cc0033;
-  box-shadow: 0 0 25px #ff0040;
-  transform: scale(1.05);
+  box-shadow: 0 18px 40px rgba(255, 0, 64, 0.2);
+  transform: translateY(-6px);
 }
 
-/* Rodapé */
+.instagram-btn {
+  background: linear-gradient(135deg, #e1306c, #c13584);
+  color: #fff;
+  box-shadow: 0 8px 30px rgba(225, 48, 108, 0.25);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+.instagram-btn:hover {
+  background: linear-gradient(135deg, #c13584, #e1306c);
+  box-shadow: 0 18px 40px rgba(225, 48, 108, 0.35);
+  transform: translateY(-6px);
+}
+
+/* ===== BOTÃO CASAS DE APOSTAS ===== */
+.casas {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  max-width: 560px;
+  padding: 0;
+  margin: 24px auto 180px;
+  border-radius: var(--radius);
+  position: relative;
+  overflow: hidden;
+  z-index: 3;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  background: linear-gradient(90deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+  border: 2px solid rgba(255, 204, 0, 0.25);
+  box-shadow: 0 0 25px rgba(255, 204, 0, 0.15);
+}
+
+.casas::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent 0%, rgba(255, 204, 0, 0.25) 50%, transparent 100%);
+  transform: skewX(-25deg);
+  animation: brilhoSuave 4s infinite linear;
+}
+
+@keyframes brilhoSuave {
+  0% {
+    left: -75%;
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    left: 125%;
+    opacity: 0;
+  }
+}
+
+.casas-banner-link {
+  display: block;
+  width: 100%;
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.casas-banner {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius);
+  transition: transform 0.4s ease;
+}
+
+.casas-banner-link:hover .casas-banner {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px rgba(255, 204, 0, 0.45);
+}
+
+.casas span {
+  background: linear-gradient(90deg, #ffdd55, #fff4c2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3), 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.casas:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  box-shadow: 0 0 35px rgba(255, 204, 0, 0.35);
+  transform: translateY(-5px);
+}
+
+/* ===== GRID CONTÊINER ===== */
+.button-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: var(--gap-md);
+}
+
+/* ===== RODAPÉ E ÍCONES SOCIAIS ===== */
 footer {
-  background-color: #111;
-  padding: 30px 20px;
+  width: 100%;
   text-align: center;
-  color: #777;
-  border-radius: 8px;
-  margin-top: 40px;
+  min-height: 100px;
+  padding: 12px 20px;
+  background: rgba(0, 0, 0, 0.55);
+  box-shadow: 0 -1px 8px rgba(255, 204, 0, 0.25);
+  border-top: 1px solid rgba(255, 204, 0, 0.3);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  backdrop-filter: blur(4px);
 }
 
-/* Ícones das redes sociais */
+.foto-rodape {
+  position: absolute;
+  left: 12px;
+  bottom: 8px;
+  width: 72px;
+  height: 72px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(255, 204, 0, 0.6);
+  z-index: 1001;
+}
+
 .social-icons {
-  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
 .social-icons img {
-  width: 40px;
-  margin: 0 12px;
-  cursor: pointer;
-  transition: transform 0.2s ease;
+  width: 34px;
+  height: 34px;
+  transition: transform 0.2s ease, filter 0.2s ease;
+  filter: drop-shadow(0 0 6px rgba(255, 204, 0, 0.6));
 }
 
 .social-icons img:hover {
   transform: scale(1.15);
+  filter: drop-shadow(0 0 15px rgba(255, 204, 0, 1));
 }
 
-/* Responsividade */
-@media screen and (max-width: 768px) {
-  header h1 {
-    font-size: 28px;
+/* ===== PERFORMANCE E A11Y ===== */
+.btn, .foto-perfil, .logo-banner {
+  transform: translateZ(0);
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+
+  /* 🔹 ALTERA AS IMAGENS DOS BOTÕES NO MOBILE */
+  .vip-btn .foto-dono {
+    content: url("assets/img/vip_mobile.png");
+  }
+  .free-btn .foto-dono {
+    content: url("assets/img/free_mobile.png");
+  }
+  .youtube-btn .foto-dono {
+    content: url("assets/img/Youtube_mobile.jpg");
+  }
+  .instagram-btn .foto-dono {
+    content: url("assets/img/insta_mobile.jfif");
   }
 
-  .btn {
-    width: 80%;
-    font-size: 16px;
+  /* 🔹 Mantém a responsividade original dos botões */
+  .casas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin-top: 24px;
+    margin-bottom: 120px;
+    width: 95%;
+    max-width: 500px;
+    height: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    border-radius: var(--radius);
+    overflow: hidden;
+    z-index: 2;
+    background: none;
+    border: none;
+    box-shadow: none;
   }
 
-  section {
-    padding: 40px 10px;
+  .casas-banner-link {
+    width: 99%;
+    height: 99%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius);
+    overflow: hidden;
   }
 
-  .social-icons img {
-    width: 30px;
+  .casas-banner {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: var(--radius);
+    box-shadow: 0 0 15px rgba(255, 204, 0, 0.3);
   }
-  
-}
-body {
-  margin: 0;
-  font-family: 'Arial Black', sans-serif;
-  background: radial-gradient(circle at top center, #001900 0%, #000000 80%);
-  color: white;
-  text-align: center;
+
+  .casas span {
+    display: none;
+  }
 }
 
-/* Cabeçalho */
-header.logo-section {
-  padding: 30px 0;
-}
+@media (min-width: 768px) {
+  .logo-banner {
+    height: 200px;
+  }
 
-header img {
-  width: 120px;
+  .foto-perfil {
+    width: 180px;
+    height: 180px;
+    margin: 32px auto 16px
+  }
 }
-
-header h1 {
-  font-size: 3em;
-  color: red8;
-  margin: 10px 0;
-}
-
-header p {
-  font-size: 1.2em;
-  color: white;
-}
-
-/* Seções */
-section {
-  margin: 40px 0;
-}
-
-section h2 {
-  font-size: 2em;
-  color: #00FF4E;
-}
-
-section p {
-  font-size: 1.1em;
-  color: white;
-  margin-bottom: 15px;
-}
-
-/* Botões tecnológicos */
-.btn {
-  display: inline-block;
-  padding: 18px 40px;
-  font-size: 20px;
-  font-weight: bold;
-  color: #000;
-  text-decoration: none;
-  border-radius: 30px;
-  margin-top: 20px;
-  text-transform: uppercase;
-  box-shadow: 0 0 12px rgba(0, 255, 153, 0.6);
-  transition: all 0.3s ease;
-  letter-spacing: 1px;
-  cursor: pointer;
-}
-
-.vip-btn {
-  background-color: #00ff99;
-  box-shadow: 0 0 15px #00ff99;
-}
-
-.vip-btn:hover {
-  background-color: #00cc88;
-  box-shadow: 0 0 25px #00ff99;
-  transform: scale(1.05);
-}
-
-.free-btn {
-  background-color: #00cfff;
-  box-shadow: 0 0 15px #00cfff;
-}
-
-.free-btn:hover {
-  background-color: #00aacc;
-  box-shadow: 0 0 25px #00cfff;
-  transform: scale(1.05);
-}
-
-.youtube-btn {
-  background-color: #ff0040;
-  box-shadow: 0 0 15px #ff0040;
-}
-
-.youtube-btn:hover {
-  background-color: #cc0033;
-  box-shadow: 0 0 25px #ff0040;
-  transform: scale(1.05);
-}
-
-.instagram-btn {
-  background-color: #ff9900;
-  box-shadow: 0 0 15px #ff9900;
-}
-
-.instagram-btn:hover {
-  background-color: #cc7a00;
-  box-shadow: 0 0 25px #ff9900;
-  transform: scale(1.05);
-}
-
-/* Rodapé */
-footer {
-  padding: 30px 0;
-  background-color: #000;
-}
-
-footer p {
-  font-size: 1.2em;
-  color: #00FF4E;
-  margin-bottom: 10px;
-}
-
-.social-icons img {
-  width: 40px;
-  margin: 0 10px;
-  vertical-align: middle;
-  transition: transform 0.2s ease;
-}
-
-.social-icons img:hover {
-  transform: scale(1.15);}
