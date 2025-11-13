@@ -425,16 +425,16 @@ footer {
 
   /* 🔹 ALTERA AS IMAGENS DOS BOTÕES NO MOBILE */
   .vip-btn .foto-dono {
-    content: url("assets/img/vip_mobile.png");
+    content: url("assets/img/Sarah_vip_mobile.jfif");
   }
   .free-btn .foto-dono {
-    content: url("assets/img/free_mobile.png");
+    content: url("assets/img/free_mobile_sarah.jfif");
   }
   .youtube-btn .foto-dono {
-    content: url("assets/img/Youtube_mobile.jpg");
+    content: url("assets/img/sarag_youtube_mobile.jfif");
   }
   .instagram-btn .foto-dono {
-    content: url("assets/img/insta_mobile.jfif");
+    content: url("assets/img/Sarah_mobile_insta.jfif");
   }
 
   /* 🔹 Mantém a responsividade original dos botões */
