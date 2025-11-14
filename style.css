@@ -101,29 +101,21 @@ p, li {
 .logo-banner {
   width: 100%;
   max-width: 100%;
-  height: 100px; /* ou 200px/260px em media queries */
+  height: 100px; /* ou o valor que usa nas media queries */
   background-image: url('assets/img/VIVER_BANNER.png');
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 0;
   position: relative;
-  transition: transform 0.3s ease, filter 0.3s ease;
-  opacity: 0.85;
-  mix-blend-mode: lighten;
-  filter: blur(1px) brightness(1.1);
-  transform: translateZ(0);
+  transition: transform 0.3s ease;
+  
+  /* REMOVIDO: opacity, mix-blend-mode e filter */
 }
 
-
 .logo-banner::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 1;
-  background: linear-gradient(180deg, rgba(0,0,0,0.06), rgba(0,0,0,0.18));
-  border-radius: inherit;
+  
+  content: none;
 }
 
 /* ===== MAIN / SEÇÕES ===== */
@@ -434,7 +426,7 @@ footer {
     content: url("assets/img/sarag_youtube_mobile.jfif");
   }
   .instagram-btn .foto-dono {
-    content: url("assets/img/Sarah_mobile_insta.jfif");
+    content: url("assets/img/sarah_mobile_insta.jfif");
   }
 
   /* 🔹 Mantém a responsividade original dos botões */
